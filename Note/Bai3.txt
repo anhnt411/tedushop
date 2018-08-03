@@ -1,0 +1,16 @@
+B1:
+-T?o các project class library : common,model,data,service
+-T?o project wepapp : Web
+-T?o project test:unittest
+-Xóa các file cs m?c dinh
+B2:
+-Ch?n web app làm project default
+B3:
+-Cài entity farmwork cho Model,Data,Web
+B4:
+-Add referrence 
+ + web referrence d?n t?t c? tr? test
+ +common không referren d?n cái nào,cái nào cung có th? referren d?n common
+ +Data rf d?n common
+ +unittest refer d?n t?t 
+ +service data,common,model
