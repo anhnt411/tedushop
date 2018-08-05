@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 namespace TeduShop.Model.Model
 {
     [Table("PostTags")]
-    class PostTag
+   public class PostTag
     {
         [Key]
         public int PostID { get; set; }
         [Key]
+        [MaxLength(50)]
         public string TagID { get; set; }
 
         [ForeignKey("PostID")]

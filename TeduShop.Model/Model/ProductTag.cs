@@ -8,17 +8,21 @@ using System.Threading.Tasks;
 
 namespace TeduShop.Model.Model
 {
-    [Table("SystemConfigs")]
-    public class SystemConfig
+    [Table("ProductTags")]
+    public class ProductTag
     {
         [Key]
-        public int ID { set; get; }
-        [Required]
-        [Column(TypeName = "varchar")]
-        public string Code { set; get; }
-        [MaxLength(50)]
-        public string ValueString { set; get; }
+        public int ProductID { set; get; }
 
-        public int? ValueInt { set; get; }
+        [Key]
+        [Column(TypeName = "varchar")]
+        [MaxLength(50)]
+        public string TagID { set; get; }
+
+        [ForeignKey("ProductID")]
+        public virtual Product Product { set; get; }
+
+        [ForeignKey("TagID")]
+        public virtual Tag Tag { set; get; }
     }
 }
