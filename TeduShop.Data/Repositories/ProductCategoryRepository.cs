@@ -9,15 +9,16 @@ using TeduShop.Model.Model;
 namespace TeduShop.Data.Repositories
 {
 
-    public interface IProductCategoryRepository
+    public interface IProductCategoryRepository : IRepository<ProductCategory>
     {
         IEnumerable<ProductCategory> GetByAlias(string alias);
     }
-    class ProductCategoryRepository:RepositoryBase<ProductCategory>,IProductCategoryRepository
-    {
-        public ProductCategoryRepository(IDbFactory dbFactory):base(dbFactory)
-        {
 
+    public class ProductCategoryRepository : RepositoryBase<ProductCategory>, IProductCategoryRepository
+    {
+        public ProductCategoryRepository(IDbFactory dbFactory)
+            : base(dbFactory)
+        {
         }
 
         public IEnumerable<ProductCategory> GetByAlias(string alias)
